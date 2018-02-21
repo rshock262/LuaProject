@@ -1,0 +1,5 @@
+{
+    "cmd" : ["lua", "$file", "$args"],
+    "info" : "Running $file_name",
+    "selector" : "source.lua"
+}
