@@ -44,4 +44,5 @@ for index,value in pairs(plist) do
 	--I assume there's a way to call one of the objects with the 
 	--display field called on it to make it barf out the name
 	--currently it iterates through the list for each value in the list, in this case 5 times
+	plist[value]=index
 end
