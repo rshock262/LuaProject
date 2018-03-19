@@ -18,16 +18,18 @@ function printResult (a)
         io.write(v, " ")
     end
         io.write("\n")
-    end
---Enter characters here one by one followed by the total number of characters
-permute ({'a','b','c'}, 3)
+end
 
-
---TODO Make input a string, and take in string broken into characters along with string length
+--[[
+takes input as a string and breaks into substrings via a loop
+for each character which is stored in an array,
+then passed to the permute function along with the total length
+of the string
+--]]
 print("Enter a few characters, not too many though since there's a lot of output")
 s= io.read("*l")
 strarray = {}
-for i = 1, s do
+for i = 1, #s do
     strarray[i] = s:sub(i,i)
 end
 permute(strarray, s:len())
