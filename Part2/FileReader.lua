@@ -1,20 +1,19 @@
 --[[
-Stolen right from PIL page, need to make adjustments or use as reference
-Needs to only count words and print output to a new text file
-]]--
-local BUFSIZE = 2^13     -- 8K
-    local f = io.input(arg[1])   -- open input file
-    local cc, lc, wc = 0, 0, 0   -- char, line, and word counts
+Counts words from a filename given in the command line
+Example: "lua FileReader.lua someFile.txt"
+Outputs to a new text file "output.txt" and writes the word count
+--]]
+local filesize = 2^13     -- 8K
+    local f = io.input(arg[1])   --open input file
+    local wc = 0   --word counts
     while true do
-      local lines, rest = f:read(BUFSIZE, "*line")
+      local lines, rest = f:read(filesize, "*line")
       if not lines then break end
       if rest then lines = lines .. rest .. '\n' end
-      cc = cc + string.len(lines)
-      -- count words in the chunk
       local _,t = string.gsub(lines, "%S+", "")
       wc = wc + t
-      -- count newlines in the chunk
-      _,t = string.gsub(lines, "\n", "\n")
-      lc = lc + t
     end
-    print(lc, wc, cc)
+io.output("output.txt")
+local f2 = io.input("output.txt")
+io.write(wc, " words in ", arg[1])
+io.input():close()
