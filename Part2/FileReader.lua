@@ -3,9 +3,9 @@ Counts words from a filename given in the command line
 Example: "lua FileReader.lua someFile.txt"
 Outputs to a new text file "output.txt" and writes the word count
 --]]
-local filesize = 2^13     -- 8K
-    local f = io.input(arg[1])   --open input file
-    local wc = 0   --word counts
+local filesize = 2^13
+    local f = io.input(arg[1])
+    local wc = 0
     while true do
       local lines, rest = f:read(filesize, "*line")
       if not lines then break end

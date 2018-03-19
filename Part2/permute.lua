@@ -32,4 +32,4 @@ strarray = {}
 for i = 1, #s do
     strarray[i] = s:sub(i,i)
 end
-permute(strarray, s:len())
+permute(strarray, #s)
