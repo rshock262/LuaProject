@@ -7,6 +7,6 @@ for k,v in pairs(b) do
 end
 
 for k,v in pairs(a) do
-        if A[v]==nil then print(v,"Is not in the Loop")
+        if A[v]==nil then print(v,"Is not in the Array")
         end
 end
