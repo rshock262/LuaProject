@@ -33,7 +33,7 @@ function start(x, c)
   print("\n\n_____________________________")
   --Selecting a card
   drawCard()
-  print("Dealer has drawn a " .. _G.tempString2 .. " of " .. _G.tempString)
+  print("Dealer has drawn one facedown card and a " .. _G.tempString2 .. " of " .. _G.tempString)
   if (_G.tempString2 == "Jack" or _G.tempString2 == "Queen" or _G.tempString2 == "King") then
   dealerTotal = dealerTotal + 10
   elseif (_G.tempString2 == "Ace") then
@@ -206,7 +206,20 @@ if (tempTotal > 21) then
     print("Out of Credits! Game Over!")
     return(credits)
   end
+  
+	--R:Moved cash out above shuffle cause why not
+  print("Would you like to cash out? (yes/no)")
+  exitDiag = io.read("*l")
+  while (exitDiag ~= "yes" and exitDiag ~= "no") do
+    print("*INVALID INPUT* Would you like to cash out? (yes/no)")
+    exitDiag = io.read("*n")
+   
+  end
  
+  if (exitDiag == "yes") then
+    gameEnd = true
+    return credits
+  end
    --Shuffle Control
  
   print("Would you like to shuffle the deck(s)?  (yes/no)")
@@ -232,20 +245,7 @@ if (tempTotal > 21) then
   _G.clubDeck = {x, x, x, x, x, x, x, x, x, x, x, x, x}  
   end
  
- 
-  print("Would you like to cash out? (yes/no)")
-  exitDiag = io.read("*l")
-  while (exitDiag ~= "yes" and exitDiag ~= "no") do
-    print("*INVALID INPUT* Would you like to cash out? (yes/no)")
-    exitDiag = io.read("*n")
-   
-  end
- 
-  if (exitDiag == "yes") then
-    gameEnd = true
-  end
-   
-   
+
    
   end
  
