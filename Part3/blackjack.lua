@@ -33,7 +33,7 @@ function start(x, c)
   print("\n\n_____________________________")
   --Selecting a card
   drawCard()
-  print("Dealer has drawn one facedown card and a " .. _G.tempString2 .. " of " .. _G.tempString)
+  print("Dealer has drawn a " .. _G.tempString2 .. " of " .. _G.tempString)
   print("Dealer has drawn  a " .. _G.tempString2 .. " of " .. _G.tempString)
   if (_G.tempString2 == "Jack" or _G.tempString2 == "Queen" or _G.tempString2 == "King") then
   dealerTotal = dealerTotal + 10
